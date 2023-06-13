@@ -59,7 +59,7 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2018-2023 ruoyi.vip All Rights Reserved.</span>
+      <!-- <span>Copyright © 2018-2023 ruoyi.vip All Rights Reserved.</span> -->
     </div>
   </div>
 </template>
@@ -103,7 +103,7 @@ function handleLogin() {
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
         Cookies.set("username", loginForm.value.username, { expires: 30 });
-        Cookies.set("password", encrypt(loginForm.value.password), { expires: 30 });
+        Cookies.set("password", loginForm.value.password);
         Cookies.set("rememberMe", loginForm.value.rememberMe, { expires: 30 });
       } else {
         // 否则移除
@@ -141,7 +141,7 @@ function getCookie() {
   const rememberMe = Cookies.get("rememberMe");
   loginForm.value = {
     username: username === undefined ? loginForm.value.username : username,
-    password: password === undefined ? loginForm.value.password : decrypt(password),
+    password: password === undefined ? loginForm.value.password : password,
     rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
   };
 }
@@ -158,6 +158,7 @@ getCookie();
   height: 100%;
   background-image: url("../assets/images/login-background.jpg");
   background-size: cover;
+  background-position-y: -350px;
 }
 .title {
   margin: 0px auto 30px auto;
