@@ -98,6 +98,10 @@
   position: relative;
   grid-area: pc;
   background-color: #2a3a5b;
+  background-image: url(@/assets/images/cim-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   & > p {
     font-size: 30px;
@@ -115,37 +119,30 @@
 
 .data-center {
   grid-area: dc;
-  background-color: tomato;
 }
 
 .service-center {
   grid-area: sc;
-  background-color: steelblue;
 }
 
 .share-center {
   grid-area: cs;
-  background-color: gold;
 }
 
 .maintenance-basic {
   grid-area: mb;
-  background-color: aqua;
 }
 
 .configuration-center {
   grid-area: cc;
-  background-color: aqua;
 }
 
 .project-management {
   grid-area: pm;
-  background-color: aqua;
 }
 
 .monitoring-com {
   grid-area: mc;
-  background-color: aqua;
 }
 
 .middle-side {
